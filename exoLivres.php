@@ -14,3 +14,21 @@ complète d'un auteur :
 
 <?php
 
+// Cette commande sert à charger les classes présentes dans un autre script
+spl_autoload_register(function ($class_name) {
+    include 'classes/' . $class_name . '.php';
+});
+
+// Instanciation d'objet Auteur
+$a1 = new Auteur("Stephen", "King");
+
+// Instanciation d'objet Livre
+$l1 = new Livre($a1, "Ca", "1986", "1138", 20);
+$l2 = new Livre($a1, "Simetierre", "1983", "374", 15);
+$l3 = new Livre($a1, "Le Fléau", "1978", "823", 14);
+$l4 = new Livre($a1, "Shining", "1977", "447", 16);
+
+
+echo $a1->getPrenom();
+var_dump ($l1->getAuteur());
+var_dump ($l2->getTitre());
