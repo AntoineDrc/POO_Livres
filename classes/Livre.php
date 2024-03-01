@@ -80,4 +80,9 @@ class Livre {
 
         return $this;
     }
+
+    // La méthode __toString permet à un d'appeler directment objet de classe et de décider comment il doit réagir
+    public function __toString() {
+        return "Le titre du livre est : \"" . $this->titre . "\", il à été écrit par " . $this->auteur->getPrenom() . " " . $this->auteur->getNom() . " et il est paru en " . $this->anneeParution->format("Y");
+    }
 }

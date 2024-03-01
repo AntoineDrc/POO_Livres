@@ -28,7 +28,3 @@ $l2 = new Livre($a1, "Simetierre", "1983", "374", 15);
 $l3 = new Livre($a1, "Le Fléau", "1978", "823", 14);
 $l4 = new Livre($a1, "Shining", "1977", "447", 16);
 
-
-echo $a1->getPrenom();
-var_dump ($l1->getAuteur());
-var_dump ($l2->getTitre());

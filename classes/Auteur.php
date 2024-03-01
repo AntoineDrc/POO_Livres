@@ -27,8 +27,33 @@ class Auteur {
         return $this;
     }
 
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    // La méthode __toString permet à un d'appeler directment objet de classe et de décider comment il doit réagir
     public function __toString() {
-        return
+        return "L'auteur s'appelle : " . $this->prenom . " " . $this->nom;
+    }
+
+    // Création d'une méthode pour afficher la bibliographie
+    public function afficherBiblioagraphie() {
+        return 
+        "Livres de " ;
     }
 }
 
+
+
+
+
+
+// "Livres de " . $this->auteur->getPrenom() . " " . $this->auteur->getNom() . "<br><br>";
