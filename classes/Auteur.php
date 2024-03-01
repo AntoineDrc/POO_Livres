@@ -12,6 +12,7 @@ class Auteur {
     public function __construct(string $prenom,string $nom) {
         $this->nom = $nom;
         $this->prenom = $prenom;
+        $this->livres = [];
     }
  
     // Création des getters / setters
@@ -39,15 +40,40 @@ class Auteur {
         return $this;
     }
 
+    public function getLivres()
+    {
+        return $this->livres;
+    }
+
+    public function setLivres($livres)
+    {
+        $this->livres = $livres;
+
+        return $this;
+    }
+
+    // Création méthode pour ajouter des livres au tableau
+    public function ajouterLivre(Livre $livre) {
+        $this->livres[] = $livre;
+    }
+
     // La méthode __toString permet à un d'appeler directment objet de classe et de décider comment il doit réagir
     public function __toString() {
-        return "L'auteur s'appelle : " . $this->prenom . " " . $this->nom;
+        return $this->prenom . " " . $this->nom;
     }
 
     // Création d'une méthode pour afficher la bibliographie
     public function afficherBiblioagraphie() {
-        return 
-        "Livres de " ;
+        $result = "<h2>Livre de " . $this . " " . "</h2>";
+
+        foreach($this->livres as $livre) {
+            $result .= $livre ."<br>";
+        }
+
+        return $result;
+
+    
+        
     }
 }
 
@@ -56,4 +82,3 @@ class Auteur {
 
 
 
-// "Livres de " . $this->auteur->getPrenom() . " " . $this->auteur->getNom() . "<br><br>";
