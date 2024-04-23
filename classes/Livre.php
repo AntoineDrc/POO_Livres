@@ -3,7 +3,8 @@
 <?php
 
 // Création d'une classe Livre
-class Livre {
+class Livre
+{
     private string $titre;
     private string $nbPage;
     private DateTime $anneeParution;
@@ -12,7 +13,8 @@ class Livre {
     private array $livres;
 
     // Constructeur de la classe livre
-    public function __construct(Auteur $auteur, string $titre, string $anneeParution, string $nbPage, int $prix) {
+    public function __construct(Auteur $auteur, string $titre, string $anneeParution, string $nbPage, int $prix)
+    {
         $this->titre = $titre;
         $this->nbPage = $nbPage;
         $this->anneeParution = new DateTime($anneeParution);
@@ -82,10 +84,10 @@ class Livre {
 
         return $this;
     }
-    
+
     // La méthode __toString permet à un d'appeler directment objet de classe et de décider comment il doit réagir
-    public function __toString() {
+    public function __toString()
+    {
         return "Le titre du livre est : \"" . $this->titre . "\", il à été écrit par " . $this->auteur->getPrenom() . " " . $this->auteur->getNom() . " et il est paru en " . $this->anneeParution->format("Y");
     }
-
 }

@@ -3,18 +3,20 @@
 <?php
 
 // Création d'un classe Auteur
-class Auteur {
+class Auteur
+{
     private string $nom;
     private string $prenom;
 
 
     // Constructeur de la classe Auteur
-    public function __construct(string $prenom,string $nom) {
+    public function __construct(string $prenom, string $nom)
+    {
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->livres = [];
     }
- 
+
     // Création des getters / setters
     public function getPrenom()
     {
@@ -53,32 +55,26 @@ class Auteur {
     }
 
     // Création méthode pour ajouter des livres au tableau
-    public function ajouterLivre(Livre $livre) {
+    public function ajouterLivre(Livre $livre)
+    {
         $this->livres[] = $livre;
     }
 
     // La méthode __toString permet à un d'appeler directment objet de classe et de décider comment il doit réagir
-    public function __toString() {
+    public function __toString()
+    {
         return $this->prenom . " " . $this->nom;
     }
 
     // Création d'une méthode pour afficher la bibliographie
-    public function afficherBiblioagraphie() {
+    public function afficherBiblioagraphie()
+    {
         $result = "<h2>Livre de " . $this . " " . "</h2>";
 
-        foreach($this->livres as $livre) {
-            $result .= $livre ."<br>";
+        foreach ($this->livres as $livre) {
+            $result .= $livre . "<br>";
         }
 
         return $result;
-
-    
-        
     }
 }
-
-
-
-
-
-
